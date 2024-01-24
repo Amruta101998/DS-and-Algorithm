@@ -4,16 +4,26 @@ class Node:
         self.next = None
 
 def reverse_linked_list(head):
-    prev = None
-    current = head
+    # Initialize pointers to keep track of the current, previous, and next nodes
+    prev = None            # To keep track of the previous node
+    current = head         # To traverse the linked list starting from the head
 
+    # Traverse the linked list
     while current is not None:
+        # Store the next node before changing the 'next' reference
         next_node = current.next
+
+        # Reverse the link by pointing the 'next' of the current node to the previous node
         current.next = prev
+
+        # Move to the next pair of nodes in the list
         prev = current
         current = next_node
 
+    # The 'prev' pointer now points to the new head of the reversed linked list
     head = prev
+
+    # Return the new head of the reversed linked list
     return head
 
 # Example usage
