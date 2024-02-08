@@ -23,7 +23,7 @@ jobs:
       - name: Code Review Agent action step
         id: cra
         if: ${{ github.event_name == 'pull_request' }}
-        uses: gitbito/codereviewagent@main
+        uses: gitbito/codereviewagent@BITO_QA_TEST
         with:
           pr: ${{ github.event.pull_request.html_url }}
           command: review
