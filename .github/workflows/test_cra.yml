@@ -15,7 +15,7 @@ jobs:
       - name: Code Review Agent - Issue Comment
         id: cra_issues_comment
         if: ${{ github.event_name == 'issue_comment' }}
-        uses: gitbito/codereviewagent@BITO_QA_TEST
+        uses: gitbito/codereviewagent@BITO-4616-QA
         with:
           pr: ${{ github.event.issue.pull_request.html_url }}
           command: ${{ github.event.comment.body }}
@@ -23,7 +23,7 @@ jobs:
       - name: Code Review Agent action step
         id: cra
         if: ${{ github.event_name == 'pull_request' }}
-        uses: gitbito/codereviewagent@BITO_QA_TEST
+        uses: gitbito/codereviewagent@BITO-4616-QA
         with:
           pr: ${{ github.event.pull_request.html_url }}
           command: review
