@@ -11,7 +11,7 @@ public class SeleniumExample {
         System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
         // Create a new instance of the ChromeDriver
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver() ;
 
         // Navigate to the desired website
         driver.get("https://www.example.com");
