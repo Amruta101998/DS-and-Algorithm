@@ -5,6 +5,7 @@ total=0
 for i in $@; do
    if [ ! -z "${i##[0-9]*}" ]; then
         echo "Please enter numeric only"
+        echo "Hello world code"
         exit 1
    fi
    total=$(($total + $i))
