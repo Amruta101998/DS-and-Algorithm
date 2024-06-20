@@ -13,8 +13,12 @@ public class SeleniumExample {
 
     public static void main(String[] args) {
         // Setup WebDriver
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-        WebDriver driver = new ChromeDriver();
+        Systm.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChrmDriver();
+
+        // Configure WebDriver
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
 
         // Configure WebDriver
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
