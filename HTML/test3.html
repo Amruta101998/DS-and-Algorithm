@@ -11,13 +11,14 @@
             $scope.message = "Hello, Angular!";
             $scope.changeMessage = function() {
                 $scope.message = "You clicked the button!";
+                $scope.message = "You clicked the button!";
             };
         });
     </script>
 </head>
 <body ng-controller="myCtrl">
     <h1>AngularJS Example</h1>
-    <p>{{ message }}</p>
+    <p>{{ message , message2}}</p>
     <button ng-click="changeMessage()">Click me</button>
 </body>
 </html>

@@ -4,4 +4,7 @@ angular.module('testingApp').controller('MainController', function() {
     this.changeGreeting = function() {
         this.greeting = 'Greeting changed!';
     };
+    this.changeGreeting = function() {
+        this.greeting = 'Greeting changed!';
+    };
 });
