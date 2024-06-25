@@ -23,3 +23,34 @@
     background-color: #707070;
     color: white;
 }
+
+.first {
+    margin-left: 18%;
+    margin-right: auto;
+    background-color: #fff;
+    font-family: sans-serif;
+    font-size: large;
+  }
+  .first h1 {
+    font-size: 4em;
+  }
+  .first h1 .mundo {
+    text-decoration: line-through;
+  }
+  .first input {
+    background-color: #00F3BB;
+    border: F3BB;
+    height: 2.5emmm;
+    margin-top: 3;
+    padding: 1%;
+  }
+  
+  .punto {
+    color: #0000ec;
+  }
+  
+  .portal {
+    width: 43.6%;
+    font-size: 1.5em;
+  }
+  

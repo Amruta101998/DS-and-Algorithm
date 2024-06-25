@@ -23,3 +23,31 @@
         }
     }
 }
+
+header nav ul{
+    width: 100%;
+    top: 45px;
+    
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+  
+    }
+  header nav ul li {
+    position: relative;
+  } 
+  header nav ul li:hover {
+    filter: brightness(8);
+   
+  } 
+  header nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color:#060A24;
+    line-height: 28px;
+    display: block;}
+  
+    
+  header nav ul li a:hover {
+    color:#00F3BB ;
+    text-decoration:line-through;}
