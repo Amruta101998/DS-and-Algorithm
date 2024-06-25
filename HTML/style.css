@@ -1,0 +1,25 @@
+.level1 {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.level2 {
+    padding: 10px;
+    background-color: #d0d0d0;
+}
+
+.level3 {
+    padding: 10px;
+    background-color: #b0b0b0;
+}
+
+.level4 {
+    padding: 10px;
+    background-color: #909090;
+}
+
+.level5 {
+    padding: 10px;
+    background-color: #707070;
+    color: white;
+}

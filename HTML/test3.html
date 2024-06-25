@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.message = "Hello, Angular!";
+            $scope.changeMessage = function() {
+                $scope.message = "You clicked the button!";
+            };
+        });
+    </script>
+</head>
+<body ng-controller="myCtrl">
+    <h1>AngularJS Example</h1>
+    <p>{{ message }}</p>
+    <button ng-click="changeMessage()">Click me</button>
+</body>
+</html>

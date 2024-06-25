@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+<body>
+    <h1>JavaScript Code Example</h1>
+    <button id="changeColorBtn">Change Color</button>
+    <p id="text">This text will change color.</p>
+
+    <script>
+        document.getElementById('changeColorBtn').addEventListener('click', () => {
+            const textElement = document.getElementById('text');
+            textElement.style.color = getRandomColor();
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

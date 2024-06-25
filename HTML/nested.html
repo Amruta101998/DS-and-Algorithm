@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Classes Example</title>
+</head>
+<body>
+    <h1>Nested Classes Example</h1>
+    <div id="output"></div>
+
+    <script>
+        class OuterClass {
+            constructor(name) {
+                this.name = name;
+            }
+
+            greet() {
+                console.log(`Hello from ${this.name}`);
+            }
+
+            class InnerClass {
+                constructor(innerName) {
+                    this.innerName = innerName;
+                }
+
+                innerGreet() {
+                    console.log(`Hello from inner class, ${this.innerName}`);
+                }
+            }
+        }
+
+        const outer = new OuterClass('Outer');
+        outer.greet();
+
+        const inner = new OuterClass.InnerClass('Inner');
+        inner.innerGreet();
+
+        document.getElementById('output').innerText = `Check the console for greetings from ${outer.name} and ${inner.innerName}`;
+    </script>
+</body>
+</html>
