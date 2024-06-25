@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testingApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller="MainController as mainCtrl">
+
+    <div class="level1">
+        <div class="level2">
+            <div class="level3">
+                <div class="level4">
+                    <div class="level5">
+                        Nested Divs up to 5 levels
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1>{{mainCtrl.greeting}}</h1>
+        <p ng-click="mainCtrl.changeGreeting()">Click to change greeting</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.controller.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

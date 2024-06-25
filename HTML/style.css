@@ -1,0 +1,56 @@
+.level1 {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.level2 {
+    padding: 10px;
+    background-color: d0d0d0;
+}
+
+.level3 {
+    padding: 10px;
+    background-color: #b0b0b0;
+}
+
+.level4 {
+    padding: 10px;
+    background-color: #909090;
+}
+
+.level5 {
+    padding: 10px;
+    background-color: #707070;
+    color: white;
+}
+
+.first {
+    margin-left: 18%;
+    margin-right: auto;
+    background-color: #fff;
+    font-family: sans-serif;
+    font-size: large;
+  }
+  .first h1 {
+    font-size: 4em;
+  }
+  .first h1 .mundo {
+    text-decoration: line-through;
+  }
+  .first input {
+    background-color: #00F3BB;
+    border: F3BB;
+    height: 2.5emmm;
+    margin-top: 3;
+    padding: 1%;
+  }
+  
+  .punto {
+    color: #0000ec;
+  }
+  
+  .portal {
+    width: 43.6%;
+    font-size: 1.5em;
+  }
+  
