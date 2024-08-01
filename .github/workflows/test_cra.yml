@@ -45,7 +45,7 @@ jobs:
 
       - name: Code Review Agent - Issue Comment
         if: github.event_name == 'issue_comment'
-        uses: gitbito/codereviewagent@BITO-5310
+        uses: gitbito/codereviewagent@release/1.4.5
         with:
           pr: ${{ github.event.issue.pull_request.html_url }}
           command: ${{ github.event.comment.body }}
@@ -53,7 +53,7 @@ jobs:
 
       - name: Code Review Agent action step
         if: github.event_name == 'pull_request'
-        uses: gitbito/codereviewagent@BITO-5310
+        uses: gitbito/codereviewagent@release/1.4.5
         with:
           pr: ${{ github.event.pull_request.html_url }}
           command: review
