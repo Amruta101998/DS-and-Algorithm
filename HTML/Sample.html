@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TestingProject">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Project</title>
+    <style>
+        .level-1 {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        .level-1 .level-2 {
+            background-color: #d9d9d9;
+            padding: 10px;
+        }
+        .level-1 .level-2 .level-3 {
+            background-color: #bfbfbf;
+            padding: 10px;
+        }
+        .level-1 .level-2 .level-3 .level-4 {
+            background-color: #a6a6a6;
+            padding: 10px;
+        }
+        .level-1 .level-2 .level-3 .level-4 .level-5 {
+            background-color: #8c8c8c;
+            padding: 10px;
+        }
+    </style>
+    <style type="text/scss">
+        .level-1 {
+            border: 1px solid #000;
+            .level-2 {
+                border: 1px solid #111;
+                .level-3 {
+                    border: 1px solid #222;
+                    .level-4 {
+                        border: 1px solid #333;
+                        .level-5 {
+                            border: 1px solid #444;
+                        }
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="level-1">
+        Level 1
+        <div class="level-2">
+            Level 2
+            <div class="level-3">
+                Level 3
+                <div class="level-4">
+                    Level 4
+                    <div class="level-5">
+                        Level 5
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-controller="MainController">
+        <h1>{{ title }}</h1>
+        <button ng-click="changeTitle()">Change Title</button>
+        <p>{{ description }}</p>
+        <button ng-click="changeDescription()">Change Description</button>
+
+        <h2>Counter: {{ counter }}</h2>
+        <button ng-click="incrementCounter()">Increment Counter</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('TestingProject', [])
+            .controller('MainController', ['$scope', function($scope) {
+                $scope.title = 'Welcome to Testing Project';
+                $scope.description = 'This is a description text.';
+                $scope.counter = 0;
+
+                $scope.changeTitle = function() {
+                    $scope.title = 'Title Changed!';
+                };
+
+                $scope.changeDescription = function() {
+                    $scope.description = 'Description Changed!';
+                };
+
+                $scope.incrementCounter = function() {
+                    $scope.counter++;
+                };
+            }]);
+    </script>
+
+    <script>
+        class Level1 {
+            constructor() {
+                console.log('Level 1 initialized');
+                this.level2 = new Level2();
+                this.initializeEventListeners();
+            }
+
+            initializeEventListeners() {
+                document.querySelector('.level-1').addEventListener('click', () => {
+                    console.log('Level 1 clicked');
+                });
+            }
+        }
+
+        class Level2 {
+            constructor() {
+                console.log('Level 2 initialized');
+                this.level3 = new Level3();
+                this.initializeEventListeners();
+            }
+
+            initializeEventListeners() {
+                document.querySelector('.level-2').addEventListener('click', (e) => {
+                    console.log('Level 2 clicked');
+                    e.stopPropagation();
+                });
+            }
+        }
+
+        class Level3 {
+            constructor() {
+                console.log('Level 3 initialized');
+                this.level4 = new Level4();
+                this.initializeEventListeners();
+            }
+
+            initializeEventListeners() {
+                document.querySelector('.level-3').addEventListener('click', (e) => {
+                    console.log('Level 3 clicked');
+                    e.stopPropagation();
+                });
+            }
+        }
+
+        class Level4 {
+            constructor() {
+                console.log('Level 4 initialized');
+                this.level5 = new Level5();
+                this.initializeEventListeners();
+            }
+
+            initializeEventListeners() {
+                document.querySelector('.level-4').addEventListener('click', (e) => {
+                    console.log('Level 4 clicked');
+                    e.stopPropagation();
+                });
+            }
+        }
+
+        class Level5 {
+            constructor() {
+                console.log('Level 5 initialized');
+                this.initializeEventListeners();
+            }
+
+            initializeEventListeners() {
+                document.querySelector('.level-5').addEventListener('click', (e) => {
+                    console.log('Level 5 clicked');
+                    e.stopPropagation();
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const level1 = new Level1();
+        });
+    </script>
+</body>
+</html>
