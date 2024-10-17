@@ -1,5 +1,3 @@
-#implementing a stack and performing a depth-first search (DFS) on a graph. 
- 
 
 class Stack:
     def __init__(self):
@@ -21,17 +19,19 @@ class Stack:
 
     def size(self):
         return len(self.items)
-    
+
 def dfs(graph, start):
     visited = set()
     stack = Stack()
-    
     stack.push(start)
+    
     while not stack.is_empty():
         vertex = stack.pop()
+        
         if vertex not in visited:
             visited.add(vertex)
             print(vertex, end=" ")  # Print visited vertex
+            
             # Add all neighbors to the stack
             for neighbor in graph[vertex]:
                 if neighbor not in visited:

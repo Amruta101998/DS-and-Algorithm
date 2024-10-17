@@ -10,15 +10,15 @@ def inorder_traversal(root):
         # Traverse the left subtree
         result += inorder_traversal(root.left)
 
-        # Visit the root node
         result.append(root.val)
+        result.append(root.val)  # Add the value to the list twice to get the node
 
         # Traverse the right subtree
         result += inorder_traversal(root.right)
 
     return result
 
-# Example usage
+
 if __name__ == "__main__":
     # Creating a sample Binary Search Tree
     root = TreeNode(5)
