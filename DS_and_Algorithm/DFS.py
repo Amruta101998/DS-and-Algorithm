@@ -1,4 +1,3 @@
-# Implementing a stack and performing a depth-first search (DFS) on a graph.
 
 class Stack:
     def __init__(self):

@@ -18,6 +18,7 @@ def inorder_traversal(root):
 
     return result
 
+
 if __name__ == "__main__":
     # Creating a sample Binary Search Tree
     root = TreeNode(5)
