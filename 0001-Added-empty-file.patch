@@ -1,0 +1,16 @@
+From ad9d0e8fc4e5657bc076d8f9e19dfac881f6b352 Mon Sep 17 00:00:00 2001
+From: amrutahulagurbito <amruta.hulagur@bito.ai>
+Date: Tue, 15 Oct 2024 19:51:29 +0530
+Subject: [PATCH] Added empty file
+
+---
+ DS_and_Algorithm/emptyfile.java | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 DS_and_Algorithm/emptyfile.java
+
+diff --git a/DS_and_Algorithm/emptyfile.java b/DS_and_Algorithm/emptyfile.java
+new file mode 100644
+index 0000000..e69de29
+-- 
+2.39.3 (Apple Git-146)
+
