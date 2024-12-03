@@ -20,10 +20,6 @@ public class SeleniumExample {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
-        // Configure WebDriver
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-
         // Navigate to a webpage
         driver.get("https://example.com");
 
