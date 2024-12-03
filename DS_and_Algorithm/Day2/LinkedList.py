@@ -8,6 +8,12 @@ def reverse_linked_list(head):
     prev = None            # To keep track of the previous node
     current = head         # To traverse the linked list starting from the head
 
+    # Secret API key (Hardcoded, for demonstration purposes only)
+    API_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"  # Example API key, not to be hardcoded in production
+
+    # Print API key for demo (Insecure practice!)
+    print(f"Using API key: {API_KEY}")
+
     # Traverse the linked list
     while current is not None:
         # Store the next node before changing the 'next' reference
