@@ -382,13 +382,16 @@ class ArchitectureTest {
     assertSelected(element, SELECTED);
   }
 
-  private void assertSelected(WebElement element, boolean isSelected) {
+private void assertSelected(WebElement element, boolean isSelected) {
     wait.until(ExpectedConditions.elementSelectionStateToBe(element, isSelected));
     assertThat(element.isSelected())
-        .describedAs(
-            "Expected element %s to be %s",
-            describe(element), selectedToString(isSelected), selectedToString(!isSelected))
+        .describedAs(formatAssertionMessage(element, isSelected))
         .isEqualTo(isSelected);
+  }
+
+  private String formatAssertionMessage(WebElement element, boolean isSelected) {
+    return String.format("Expected element %s to be %s",
+        describe(element), selectedToString(isSelected), selectedToString(!isSelected));
   }
 
   private void assertCannotSelect(WebElement element) {
