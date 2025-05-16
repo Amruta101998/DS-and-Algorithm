@@ -1,0 +1,84 @@
+Question 1
+Write a function “insert_any()” for inserting a node at any given position of the linked list. Assume
+position starts at 0.
+
+newNode->data = data; // Link data part
+        newNode->next = NULL;
+
+        temp = head;
+
+        /* 
+         * Traverse to the n-1 position 
+         */
+        for(i=2; i<=position-1; i++)
+        {
+            temp = temp->next;
+
+            if(temp == NULL)
+                break;
+        }
+        if(temp != NULL)
+        {
+            /* Link address part of new node */
+            newNode->next = temp->next; 
+
+            /* Link address part of n-1 node */
+            temp->next = newNode;
+         }
+
+
+
+
+Question 2
+Write a function “delete_beg()” for deleting a node from the beginning of the linked list.
+
+
+void delete_beg()
+{
+    struct node *toDelete;
+
+    if(head == NULL)
+    {
+        printf("List is already empty.");
+    }
+    else
+    {
+        toDelete = head;
+        head = head->next;
+
+        printf("\nData deleted = %d\n", toDelete->data);
+        free(toDelete);
+
+        printf("SUCCESSFULLY DELETED FIRST NODE FROM LIST\n");
+    }
+}
+
+
+
+
+
+Question 3
+Write a function “delete_end()” for deleting a node from the end of the linked list.
+
+int remove_last(node_t * head) {
+    int retval = 0;
+    /* if there is only one item in the list, remove it */
+    if (head->next == NULL) {
+        retval = head->val;
+        free(head);
+        return retval;
+    }
+
+    /* get to the second to last node in the list */
+    node_t * current = head;
+    while (current->next->next != NULL) {
+        current = current->next;
+    }
+
+    /* now current points to the second to last item of the list, so let's remove current->next */
+    retval = current->next->val;
+    free(current->next);
+    current->next = NULL;
+    return retval;
+
+}

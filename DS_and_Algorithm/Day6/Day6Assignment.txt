@@ -1,0 +1,58 @@
+Question 1
+Write a function to find the maximum element in the stack.
+
+ANS:
+#include <stdio.h>
+#include <stdlib.h>
+int stack[50],top,max=0;
+void push(int x)
+{
+   top++;
+   stack[top]=x;
+   if(max < stack[top])
+        max = stack[top];
+}
+
+void pop()
+{
+    int i;
+    if(max == stack[top])
+        max=0;
+    top--;
+    for(i= top;i>=0;i--)
+        if(max < stack[i])
+            max = stack[i];
+}
+
+
+
+Question 2
+Write a function to find the minimum element in the stack.
+
+ANS:
+void push(int x)
+{
+    stack[top]=x;
+   if(x < minEle)
+        stack[top]=2*x - minEle; 
+        min = x;
+}
+
+void pop() 
+    { 
+        if (top== -1) 
+        { 
+            printf("underflow");
+            return; 
+        } 
+        int x = stack[top--]; 
+        printf("Deleted item %d",x);
+
+        if (x < minEle) 
+        { 
+            minEle = 2*minEle - x; 
+        } 
+  
+        else
+            return x; 
+    }
