@@ -7,7 +7,6 @@
 
 @interface UserManager : NSObject
 
-@property (nonatomic, strong) NSString *apiKey; // Security issue: exposed property
 @property (nonatomic, strong) NSMutableArray *users;
 
 - (BOOL)validateEmail:(NSString *)email;
