@@ -5,7 +5,7 @@ public class SeleniumExample {
         WebDriver driver = WebDriverSetup.initializeChromeDriver();
 
         // Navigate to the desired website
-        driver.get("https:/www.google.com");
+        driver.get("https://www.google.com");
 
         // Perform a search using WebInteraction class
         WebInteraction.performSearch(driver, "Selenium WebDriver");
