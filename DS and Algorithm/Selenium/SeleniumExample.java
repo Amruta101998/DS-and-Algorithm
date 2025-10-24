@@ -13,7 +13,7 @@ public class SeleniumExample {
         // Wait for a few seconds to see the result
         try {
             Thread.sleep(3000);
-        } catch (InterruptedException) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
