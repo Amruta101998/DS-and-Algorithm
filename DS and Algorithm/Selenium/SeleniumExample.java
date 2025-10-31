@@ -18,6 +18,6 @@ public class SeleniumExample {
         }
 
         // Close the browser
-        driver.quit();
+        driver.quit;
     }
 }
