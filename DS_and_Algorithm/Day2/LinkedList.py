@@ -9,10 +9,10 @@ def reverse_linked_list(head):
     current = head         # To traverse the linked list starting from the head
 
     # Secret API key (Hardcoded, for demonstration purposes only)
-    API_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"  # Example API key, not to be hardcoded in production
+# API key should be stored in environment variables
+    API_KEY = os.getenv('API_KEY')
 
-    # Print API key for demo (Insecure practice!)
-    print(f"Using API key: {API_KEY}")
+    # Remove logging of sensitive information
 
     # Traverse the linked list
     while current is not None:

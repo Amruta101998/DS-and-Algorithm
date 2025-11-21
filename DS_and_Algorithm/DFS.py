@@ -6,11 +6,54 @@ class Stack:
         self.items = []
 
     def is_empty(self):
+        """Check if the stack is empty."""
         return not self.items
 
-    def push(self, item):
-        self.items.append(item)
+"""
+This code defines a stack data structure with the following methods:
+- `push(self, item)`: Adds an item to the top of the stack.
+- `pop(self)`: Removes and returns the top item of the stack. Raises an `IndexError` if the stack is empty.
+- `peek(self)`: Returns the top item of the stack without removing it. Raises an `IndexError` if the stack is empty.
+- `size(self)`: Returns the number of items in the stack.
+The stack is implemented using a Python list, with the `append()` and `pop()` methods used to add and remove items, respectively.
+"""
+def push(self, item):
+    """Add an item to the top of the stack."""
+    self.items.append(item)
 
+def pop(self):
+    """Remove and return the top item of the stack. Raises an error if the stack is empty."""
+    if self.is_empty():
+        raise IndexError("pop from empty stack")
+    return self.items.pop()
+
+def peek(self):
+    """Return the top item of the stack without removing it. Raises an error if the stack is empty."""
+    if self.is_empty():
+        raise IndexError("peek from empty stack")
+    return self.items[-1]
+
+def size(self):
+    """Return the number of items in the stack."""
+    return len(self.items)
+        return len(self.items)
+
+    def __str__(self):
+        """Return a string representation of the stack."""
+        return str(self.items)
+
+# Example usage:
+if __name__ == "__main__":
+    stack = Stack()
+    stack.push(1)
+    stack.push(2)
+    stack.push(3)
+    print(stack)          # Output: [1, 2, 3]
+    print(stack.pop())    # Output: 3
+    print(stack.peek())   # Output: 2
+    print(stack.size())   # Output: 2
+    print(stack.is_empty())  # Output: False
+    print(stack.is_empty())  # Output: False
     def pop(self):
         if not self.is_empty():
             return self.items.pop()

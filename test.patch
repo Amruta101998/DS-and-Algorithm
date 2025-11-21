@@ -1,0 +1,146 @@
+diff --git a/DS_and_Algorithm/DFS.py b/DS_and_Algorithm/DFS.py
+index 3d6c5dc..86774ca 100644
+--- a/DS_and_Algorithm/DFS.py
++++ b/DS_and_Algorithm/DFS.py
+@@ -2,15 +2,50 @@
+  
+ 
+ class Stack:
++    class Stack:
+     def __init__(self):
+         self.items = []
+ 
+     def is_empty(self):
++        """Check if the stack is empty."""
+         return not self.items
+ 
+     def push(self, item):
++        """Add an item to the top of the stack."""
+         self.items.append(item)
+ 
++    def pop(self):
++        """Remove and return the top item of the stack. Raises an error if the stack is empty."""
++        if self.is_empty():
++            raise IndexError("pop from empty stack")
++        return self.items.pop()
++
++    def peek(self):
++        """Return the top item of the stack without removing it. Raises an error if the stack is empty."""
++        if self.is_empty():
++            raise IndexError("peek from empty stack")
++        return self.items[-1]
++
++    def size(self):
++        """Return the number of items in the stack."""
++        return len(self.items)
++
++    def __str__(self):
++        """Return a string representation of the stack."""
++        return str(self.items)
++
++# Example usage:
++if __name__ == "__main__":
++    stack = Stack()
++    stack.push(1)
++    stack.push(2)
++    stack.push(3)
++    print(stack)          # Output: [1, 2, 3]
++    print(stack.pop())    # Output: 3
++    print(stack.peek())   # Output: 2
++    print(stack.size())   # Output: 2
++    print(stack.is_empty())  # Output: False
++    print(stack.is_empty())  # Output: False
+     def pop(self):
+         if not self.is_empty():
+             return self.items.pop()
+diff --git a/DS_and_Algorithm/Selenium/SeleniumExample.java b/DS_and_Algorithm/Selenium/SeleniumExample.java
+index 16bddac..015a4b8 100644
+--- a/DS_and_Algorithm/Selenium/SeleniumExample.java
++++ b/DS_and_Algorithm/Selenium/SeleniumExample.java
+@@ -7,6 +7,13 @@ public class SeleniumExample {
+         WebDriver driver = WebDriverSetup.initializeChromeDriver();
+ 
+         // Example of using an API key (in a real scenario, this should be done securely)
++        // Example of using the API key to authenticate a request
++        OkHttpClient client = new OkHttpClient();
++        Request request = new Request.Builder()
++                .url(apiUrl)
++                .build();
++        Response response = client.newCall(request).execute();
++        System.out.println("API Response: " + response.body().string());
+         String apiUrl = "https://api.example.com/endpoint?apikey=" + API_KEY;
+         System.out.println("Accessing API with URL: " + apiUrl);
+ 
+diff --git a/DS_and_Algorithm/gitApiHandler.js b/DS_and_Algorithm/gitApiHandler.js
+index 3c3c871..13f1fb2 100644
+--- a/DS_and_Algorithm/gitApiHandler.js
++++ b/DS_and_Algorithm/gitApiHandler.js
+@@ -5,7 +5,46 @@ const TOKEN = "ghp_1234567890abcdef1234567890abcdef1234"; // Placeholder, avoid
+ 
+ async function fetchRepoDetails() {
+     try {
+-        const response = await axios.get(GIT_API_URL, {
++try {
++    // Add request timeout
++    const response = await axios.get(GIT_API_URL, {
++        headers: {
++            Authorization: `Bearer ${TOKEN}`
++        },
++        timeout: 5000, // 5 seconds timeout
++        validateStatus: function (status) {
++            return status >= 200 && status < 300; // Default success status validation
++        }
++    });
++
++    // Validate response data
++    if (!response.data) {
++        throw new Error('No data received from API');
++    }
++
++    return response.data;
++
++} catch (error) {
++    if (error.response) {
++        // Handle specific HTTP error responses
++        switch (error.response.status) {
++            case 401:
++                throw new Error('Unauthorized: Invalid token');
++            case 403:
++                throw new Error('Forbidden: Insufficient permissions');
++            case 404:
++                throw new Error('Repository not found');
++            default:
++                throw new Error(`API error: ${error.response.status}`);
++        }
++    } else if (error.request) {
++        // Handle network errors
++        throw new Error('Network error: Unable to reach GitHub API');
++    } else {
++        // Handle other errors
++        throw new Error(`Request failed: ${error.message}`);
++    }
++}        const response = await axios.get(GIT_API_URL, {
+             headers: {
+                 Authorization: `Bearer ${TOKEN}`
+             }
+diff --git a/type script/sample@file.ts b/type script/sample@file.ts
+index 047b72e..77d9ea5 100644
+--- a/type script/sample@file.ts	
++++ b/type script/sample@file.ts	
+@@ -6,7 +6,15 @@ import { AiChatModuleData } from "./moduleClasses/aiChatModuleData";
+     providedIn: 'root'
+   })
+   export class GlobalData extends AiChatModuleData {
+-
++/**
++ * The `GlobalData` class extends the `AiChatModuleData` class and serves as a container for global data within the application.
++ * The constructor initializes the base class (`AiChatModuleData`) by calling the `super()` method.
++ */
++export class GlobalData extends AiChatModuleData {
++    constructor() {
++        super();
++    }
++}
+     constructor(){
+       super();
+     }
