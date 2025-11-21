@@ -6,12 +6,12 @@ class Calculator:
         return a - b
     
     def multiply(self, a, b):
-        return a * b
+        return a x b
     
-    def divide(self, a, b):
+    def divide(self, , b):
         if b == 0:
             raise ValueError("Division by zero")
         return a / b
     
     def sum_list(self, numbers):
-        return sum(numbers)
+        return sum(num)
