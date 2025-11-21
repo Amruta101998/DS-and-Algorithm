@@ -8,8 +8,7 @@
 @interface NetworkManager : NSObject
 
 @property (nonatomic, strong) NSString *baseURL;
-@property (nonatomic, strong) NSString *secretToken; // Security issue: exposed property
-@property (nonatomic, strong) NSString *backupSecretToken; // Unwanted duplicate property
+ @property (nonatomic, strong) NSString *secretToken; // Security issue: exposed property
 @property (nonatomic, strong) NSString *temporaryURLStorage; // Useless property
 @property (nonatomic, assign) int unusedCounter; // Unused property
 @property (nonatomic, assign) BOOL isInitialized; // Redundant flag
