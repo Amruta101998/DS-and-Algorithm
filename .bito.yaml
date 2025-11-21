@@ -27,7 +27,7 @@ custom_guidelines:
       path: "Customguideline/typescript.log" 
     md:
       name: "Markdown repo level "
-      path: "/Customguideline/markdown.md" 
+      path: "Customguideline/markdown.md"
 
 # Run Dependency Check analysis during code reviews. Valid values : true | false
 dependency_check.enabled: true
