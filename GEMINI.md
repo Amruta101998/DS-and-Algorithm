@@ -5,6 +5,7 @@
 
 ## Document Purpose
 This guide provides Gemini-specific implementation patterns and reasoning approaches for the LLM Proxy project. It focuses on practical implementation details, code patterns, and integration strategies.
+This guide provides Gemini-specific implementation patterns and reasoning approaches for the LLM Proxy project. It focuses on practical implementation details, code patterns, and integration strategies.
 
 ## Gemini Implementation Philosophy
 
