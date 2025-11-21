@@ -1,0 +1,42 @@
+{
+  "description": "Sample JSON simulating memory leak patterns",
+  "leakyData": {
+    "circularReference": {
+      "self": {
+        "self": {
+          "self": "This circular structure will bloat memory (e.g., Node.js/JS JSON.parse)"
+        }
+      }
+    },
+    "redundantArrays": {
+      "bigArray1": [1, 2, 3],
+      "bigArray2": [1, 2, 3],
+      "bigArray3": [1, 2, 3],
+      "bigArray3": [1, 2, 3, 4],
+      "repeated1000x": "This duplicates data unnecessarily"
+    },
+    "recursiveData": {
+      "level1": {
+        "level2": {
+          "level3": {
+            "level4": "Nested indefinitely in real misuse cases"
+          }
+        }
+      }
+    },
+    "unreleasedResources": {
+      "openHandles": [
+        {file: "unclosed_file_handle.txt"},
+        {"socket": "unterminated_connection"}
+      ]
+    }
+  },
+  "metadata": {
+    "note": "THIS IS INTENTIONALLY BAD CODE - DO NOT USE IN PRODUCTION",
+    "issues": [
+      "Circular references prevent garbage collection",
+      "Deep recursion crashes JSON parsers",
+      "Duplicate data wastes memory"
+    ]
+  }
+}

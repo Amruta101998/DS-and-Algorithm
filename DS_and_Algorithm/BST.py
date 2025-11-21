@@ -30,5 +30,5 @@ if __name__ == "__main__":
     root.right.right = TreeNode(8)
 
     print("Inorder Traversal of BST:")
-    result = inorder_traversal(root)
+    result = bst.inorder_traversal()
     print(result)
