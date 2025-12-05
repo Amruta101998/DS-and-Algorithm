@@ -44,7 +44,6 @@
 // Security issue: SQL injection vulnerability
 - (BOOL)authenticateUser:(NSString *)username password:(NSString *)password {
     NSString *query = [NSString stringWithFormat:@"SELECT * FROM users WHERE username = '%@' AND password = '%@'", username, password];
-    NSLog(@"Executing query: %@", query); // Security issue: logging sensitive data
     
     // Unwanted nested loops
     for (int i = 0; i < [self.users count]; i++) {
