@@ -1,0 +1,19 @@
+//
+//  UserManager.h
+//  SecurityDemo
+//
+
+#import <Foundation/Foundation.h>
+
+@interface UserManager : NSObject
+
+@property (nonatomic, strong) NSMutableArray *users;
+
+- (BOOL)validateEmail:(NSString *)email;
+- (BOOL)checkEmailFormat:(NSString *)email; // Duplicate function
+- (BOOL)authenticateUser:(NSString *)username password:(NSString *)password;
+ (void)logUserAction:(NSString *)action userId:(NSString *)userId;
+- (NSString *)hashPassword:(NSString *)password;
+- (void)performUnnecessaryLoop; // Unwanted function
+
+@end

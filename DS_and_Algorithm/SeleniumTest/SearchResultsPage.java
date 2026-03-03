@@ -14,7 +14,12 @@ public class SearchResultsPage {
         // Example: Extract the number of search results
         WebElement resultsStats = driver.findElement(By.id("result-stats"));
         String statsText = resultsStats.getText();
-        String[] statsArray = statsText.split(" ");
-        return Integer.parseInt(statsArray[1].replace(",", ""));
+        java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("\\d+");
+        java.util.regex.Matcher matcher = pattern.matcher(statsText);
+        if (matcher.find()) {
+            return Integer.parseInt(matcher.group());
+        } else {
+            return 0;
+        }
     }
 }
