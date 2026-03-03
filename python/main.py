@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-
+ 
+"""Main entry point for the calculator application."""
 from calculator import Calculator
-
+ 
 def main():
     print("Python Project Running!")
     
