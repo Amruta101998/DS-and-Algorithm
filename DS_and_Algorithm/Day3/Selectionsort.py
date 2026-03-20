@@ -1,4 +1,9 @@
 def selection_sort(arr):
+    """Sort an array using the selection sort algorithm.
+    
+    Args:
+        arr (list): The list to be sorted in-place.
+    """
     n = len(arr)
 
     for i in range(n):
