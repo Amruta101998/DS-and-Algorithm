@@ -2,7 +2,13 @@
 public class SeleniumExample {
     public static void main(String[] args) {
         // Initialize WebDriver
-        WebDriver driver = WebDriverSetup.initializeChromeDriver();
+        WebDriver driver;
+        try {
+            driver = WebDriverSetup.initializeChromeDriver();
+        } catch (WebDriverException e) {
+            System.err.println("Failed to initialize Chrome driver: " + e.getMessage());
+            return;
+        }
 
         // Navigate to the desired website
         driver.get("https://www.example.com");
